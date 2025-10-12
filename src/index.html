@@ -49,18 +49,18 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!-- Background Image -->
     <picture class="cs-background">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
         <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
         <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width:1920, height:1200 }) | jpeg %}" alt="library" width="1920" height="1200" loading="eager" decoding="async">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero1.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/hero1.png" | resize({ width:1920, height:1200 }) | jpeg %}" alt="library" width="1920" height="1200" loading="eager" decoding="async">
    </picture>
 </section>
 <!-- ============================================ -->
@@ -80,10 +80,18 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </div>
         <picture class="cs-picture">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building29.jpg">
-            <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building29.jpg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/building29.jpg" alt="building" width="1280" height="568">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/aboutus.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="library" width="1280" height="568" loading="lazy" decoding="async">
         </picture>
     </div>
 </section>
@@ -150,19 +158,19 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <section id="logos-857">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Coverage</span>
-            <h2 class="cs-title">Use Your Insurance</h2>
+            <span class="cs-topper">The Global Stage</span>
+            <h3>We help brands earn placement in leading publications like Vogue, Brides, and Architectural Digest</h3>
         </div>
         <div class="cs-logo-group">
             <!--Ideally you want to use svg's for the file path image, which is why these aren't wrapped in picture elements for different screen sizes-->
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo5.png" alt="logo" width="150" height="65" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo6.png" alt="logo" width="150" height="55" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo7.png" alt="logo" width="150" height="53" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo8.png" alt="logo" width="150" height="61" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo5.png" alt="logo" width="150" height="65" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo6.png" alt="logo" width="150" height="55" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo7.png" alt="logo" width="150" height="53" loading="lazy" decoding="async">
-            <img class="cs-logo" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos%2Flogo8.png" alt="logo" width="150" height="61" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/vogue.svg" alt="logo" width="150" height="65" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/the-knot.svg" alt="logo" width="150" height="55" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/architectural_digest.svg" alt="logo" width="150" height="53" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/brides.svg" alt="logo" width="150" height="61" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/vogue.svg" alt="logo" width="150" height="65" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/brides.svg" alt="logo" width="150" height="55" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/the-knot.svg" alt="logo" width="150" height="55" loading="lazy" decoding="async">
+            <img class="cs-logo" src="/assets/svgs/elle_decor.svg" alt="logo" width="150" height="61" loading="lazy" decoding="async">
         </div>
     </div>
 </section>
