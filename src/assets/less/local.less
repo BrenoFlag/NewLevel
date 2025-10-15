@@ -333,6 +333,153 @@
 }
 
 /*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1209 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        .cs-container {
+            /* changes to 1280px at tablet */
+            max-width: (704/16rem);
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: center;
+            max-width: (650/16rem);
+            width: 100%;
+            margin: 6px;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (20/16rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            /* 8px - 48px */
+            padding: 0 clamp(0.5rem, 5vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            grid-column: span 12;
+
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* content property isn't set until 768px, to hide the line on mobile */
+                /* 120px - 200px */
+                content: "";
+                width: clamp(7.5rem, 14vw, 12.5rem);
+                height: (90/16rem);
+                background: url("/assets/svgs/testDottedLine.svg");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 1;
+                display: none;
+                position: absolute;
+                top: 0;
+                left: clamp(11.5rem, 24vw, 20rem);
+            }
+        }
+
+        .cs-number {
+            font-size: (20/16rem);
+            font-weight: bold;
+            width: (88/16rem);
+            height: (88/16rem);
+            /* 16px - 32px */
+            margin-bottom: clamp(1rem, 4vw, 2rem);
+            color: var(--primary);
+            background-color: var(--primaryLight);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: (40/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (413/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1209 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+
+/*-- -------------------------- -->
 <---           Logos            -->
 <--- -------------------------- -*/
 

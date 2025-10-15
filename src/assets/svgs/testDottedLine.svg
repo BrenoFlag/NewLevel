@@ -1,0 +1,7 @@
+<svg width="160" height="4" viewBox="0 0 160 4" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="0" y1="2" x2="160" y2="2"
+          stroke="black"
+          stroke-width="2"
+          stroke-dasharray="10 10"
+          stroke-linecap="round" />
+</svg>
