@@ -124,12 +124,13 @@
 
         // Transition Properties
         color: var(--bodyTextColorWhite);
-        transition: color 0.3s;
+        transition: color 0.3s, background-color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
 
         &:hover {
-            color: #fff;
+            color: var(--bodyTextColorWhite);
+            background-color: var(--hoverColor);
 
             &:before {
                 width: 100%;
@@ -144,7 +145,7 @@
             content: "";
             opacity: 1;
             display: block;
-            background-color: #000;
+            background-color: var(--hoverColor);
             height: 100%;
 
             //Transition properties
