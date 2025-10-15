@@ -12,8 +12,6 @@
 @media only screen and (min-width: 0rem) {
     #sbs-2348 {
         padding: var(--sectionPadding);
-        /* 100px - 200px */
-        padding-bottom: clamp(6.25rem, 8vw, 12.5rem);
         /* clips anything overflowing */
         overflow: hidden;
         position: relative;
@@ -24,7 +22,8 @@
             max-width: (1800/16rem);
             margin: auto;
             /* 16px - 80px */
-            padding: clamp(1rem, 5vw, 5rem);
+            padding-left: clamp(1rem, 5vw, 5rem);
+            padding-right: clamp(1rem, 5vw, 5rem);
             box-sizing: border-box;
             background-color: var(--background);
             display: flex;
