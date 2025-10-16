@@ -121,7 +121,8 @@ Strategic visibility turns your brand into a reference point—one that editors 
 Behind every feature, there’s faith in the story being told.\
 If you’re ready to align creativity with visibility, partner with a team that sees the art and the architecture behind your success.  
 
-Let’s take your brand to the next level.\
- **[Connect with New Level Group](https://newlevelpr.netlify.app)**
+Let’s take your brand to the next level.
+
+[Connect with Nu Level Group](https://newlevelpr.netlify.app)
 
 - - -
