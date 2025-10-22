@@ -104,19 +104,21 @@
     body.dark-mode {
         #sbs-2348 {
             .cs-container {
-                background-color: rgba(0, 0, 0, .2);
+                background-color: var(--darkBackground);
             }
-            .cs-h2, .cs-item-text {
+
+            .cs-topper,
+            .cs-title,
+            .cs-text {
                 color: var(--bodyTextColorWhite);
-                border-color: rgba(255, 255, 255, .2);
+            }
+
+            .cs-text {
+                opacity: .8;
             }
 
             .cs-icon {
                 filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-item-text {
-                opacity: .8;
             }
         }
     }
@@ -517,13 +519,11 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #logos-857 {
-            background-color: fade(#000, 20%);
+            background-color: var(--darkBackground);
 
-            .cs-topper {
-                color: var(--primaryLight);
-            }
-
-            .cs-title {
+            .cs-topper,
+            .cs-title,
+            h3 {
                 color: var(--bodyTextColorWhite);
             }
 
@@ -671,6 +671,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #reviews-67 {
+            .cs-topper,
             .cs-title,
             .cs-text,
             .cs-item-text,
@@ -679,7 +680,7 @@
             }
 
             .cs-item {
-                background: rgba(0, 0, 0, 0.2);
+                background-color: var(--darkBackground);
             }
 
             .cs-desc {
