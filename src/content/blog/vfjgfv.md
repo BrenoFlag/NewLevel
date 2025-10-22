@@ -72,7 +72,7 @@ Behind every **magazine feature** is hours of research, careful writing, and a d
 
 ## PR Beyond Weddings: Architecture, Design & Events
 
-At New Level Group, luxury visibility doesn’t stop at weddings.\
+At NuLevel Group, luxury visibility doesn’t stop at weddings.\
 Our experience as a **design PR agency**, **architecture PR agency**, and **event PR agency** allows us to translate beauty across disciplines. A wedding venue’s interior, a floral designer’s installation, or a modern architect’s lines all share the same DNA—creative excellence worthy of recognition.
 
 By bridging **interior design PR**, **architecture PR firm** strategy, and **lifestyle PR**, we help clients build multi-industry reputations.\
@@ -123,6 +123,6 @@ If you’re ready to align creativity with visibility, partner with a team that 
 
 Let’s take your brand to the next level.
 
-[Connect with Nu Level Group](https://newlevelpr.netlify.app)
+[Connect with NuLevel Group](https://newlevelpr.netlify.app)
 
 - - -
