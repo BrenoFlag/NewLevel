@@ -228,6 +228,20 @@
             display: block !important;
         }
 
+        .cs-button-solid {
+            background-color: var(--secondary);
+            color: var(--bodyTextColor);
+
+            &:hover {
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+            }
+
+            &:before {
+                background-color: var(--primary);
+            }
+        }
+
         .cs-button-outline {
             border-color: #fff;
             color: #fff;
