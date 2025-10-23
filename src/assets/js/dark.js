@@ -2,13 +2,28 @@
 //    The Dark Mode System
 //
 
+// updates the logo sources based on the current mode
+function updateLogoSources(isDarkMode) {
+    const logos = document.querySelectorAll('[data-light-src][data-dark-src]');
+
+    logos.forEach((logo) => {
+        const targetSource = isDarkMode ? logo.dataset.darkSrc : logo.dataset.lightSrc;
+
+        if (targetSource && logo.getAttribute('src') !== targetSource) {
+            logo.setAttribute('src', targetSource);
+        }
+    });
+}
+
 // helper functions to toggle dark mode
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
+    updateLogoSources(true);
     sessionStorage.setItem("theme", "dark");
 }
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
+    updateLogoSources(false);
     sessionStorage.setItem("theme", "light");
 }
 
