@@ -2,32 +2,39 @@
 //    The Dark Mode System
 //
 
+// updates the logo sources based on the current mode
+function updateLogoSources(isDarkMode) {
+    const logos = document.querySelectorAll('[data-light-src][data-dark-src]');
+
+    logos.forEach((logo) => {
+        const targetSource = isDarkMode ? logo.dataset.darkSrc : logo.dataset.lightSrc;
+
+        if (targetSource && logo.getAttribute('src') !== targetSource) {
+            logo.setAttribute('src', targetSource);
+        }
+    });
+}
+
 // helper functions to toggle dark mode
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
-    localStorage.setItem("theme", "dark");
+    updateLogoSources(true);
+    sessionStorage.setItem("theme", "dark");
 }
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
-    localStorage.setItem("theme", "light");
+    updateLogoSources(false);
+    sessionStorage.setItem("theme", "light");
 }
 
 // determines a new users dark mode preferences
 function detectColorScheme() {
-    // default to the light theme
-    let theme = "light";
-
-    // check localStorage for a saved 'theme' variable. if it's there, the user has visited before, so apply the necessary theme choices
-    if (localStorage.getItem("theme")) {
-        theme = localStorage.getItem("theme");
+    // default to light mode, but respect the theme chosen during this browser session
+    if (sessionStorage.getItem("theme") === "dark") {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
     }
-    // if it's not there, check to see if the user has applied dark mode preferences themselves in the browser
-    else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        theme = "dark";
-    }
-
-    // if there is no preference set, the default of light will be used. apply accordingly
-    theme === "dark" ? enableDarkMode() : disableDarkMode();
 }
 
 // run on page load
@@ -35,6 +42,6 @@ detectColorScheme();
 
 // add event listener to the dark mode button toggle
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-    // on click, check localStorage for the dark mode value, use to apply the opposite of what's saved
-    localStorage.getItem("theme") === "light" ? enableDarkMode() : disableDarkMode();
+    // on click, check the current session's dark mode value, use to apply the opposite of what's saved
+    sessionStorage.getItem("theme") === "light" ? enableDarkMode() : disableDarkMode();
 });

@@ -104,19 +104,21 @@
     body.dark-mode {
         #sbs-2348 {
             .cs-container {
-                background-color: rgba(0, 0, 0, .2);
+                background-color: var(--darkBackground);
             }
-            .cs-h2, .cs-item-text {
+
+            .cs-topper,
+            .cs-title,
+            .cs-text {
                 color: var(--bodyTextColorWhite);
-                border-color: rgba(255, 255, 255, .2);
+            }
+
+            .cs-text {
+                opacity: .8;
             }
 
             .cs-icon {
                 filter: grayscale(1) brightness(1000%);
-            }
-
-            .cs-item-text {
-                opacity: .8;
             }
         }
     }
@@ -185,7 +187,6 @@
             transition: box-shadow 0.3s, border-color 0.3s;
 
             &:hover {
-                .cs-h3,
                 .cs-link {
                     color: var(--primary);
                 }
@@ -290,7 +291,9 @@
         #services-1684 {
             .cs-title,
             .cs-h3,
-            .cs-item-text {
+            .cs-item-text,
+            .cs-link-text,
+            .cs-topper{
                 color: var(--bodyTextColorWhite);
             }
 
@@ -298,12 +301,15 @@
             .cs-item-text {
                 opacity: 0.8;
             }
+            .cs-item {
+                border-left: 1px solid var(--secondary);
+            }
         }
     }
 }
 
 /*-- -------------------------- -->
-<---           Steps            -->
+<---           why choose us    -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -449,6 +455,35 @@
     }
 }
 
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #steps-1209 {
+            .cs-title,
+            .cs-h3,
+            .cs-item-text,
+            .cs-link-text,
+            .cs-topper{
+                color: var(--bodyTextColorWhite);
+            }
+            .cs-number{
+                border-color:  var(--secondary);
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text,
+            .cs-item-text {
+                opacity: 0.8;
+                color:  var(--bodyTextColorWhite) ;
+            }
+
+            .cs-item {
+                &:after {
+                    background-image: url("/assets/svgs/darkModeSvgs/testDottedLineWhite.svg");
+                }
+            }
+        }
+    }
+}
 
 /*-- -------------------------- -->
 <---           Logos            -->
@@ -504,6 +539,23 @@
     }
 }
 
+/* Tablet - 1024px */
+@media only screen and (min-width: 64rem) {
+    #logos-857 {
+        .cs-logo-group {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: clamp(2rem, 3vw, 3.5rem);
+        }
+
+        .cs-logo {
+            width: clamp(6rem, 8vw, 9.375rem);
+            max-width: none;
+            flex: 0 0 auto;
+        }
+    }
+}
+
 /* Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
     #logos-857 {
@@ -517,18 +569,16 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #logos-857 {
-            background-color: fade(#000, 20%);
+            background-color: var(--darkBackground);
 
-            .cs-topper {
-                color: var(--primaryLight);
-            }
-
-            .cs-title {
+            .cs-topper,
+            .cs-title,
+            h3 {
                 color: var(--bodyTextColorWhite);
             }
 
             .cs-logo {
-                filter: grayscale(100) brightness(2000%);
+                filter: none;
             }
         }
     }
@@ -671,6 +721,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #reviews-67 {
+            .cs-topper,
             .cs-title,
             .cs-text,
             .cs-item-text,
@@ -679,7 +730,7 @@
             }
 
             .cs-item {
-                background: rgba(0, 0, 0, 0.2);
+                background-color: var(--darkBackground);
             }
 
             .cs-desc {

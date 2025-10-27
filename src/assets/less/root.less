@@ -24,6 +24,7 @@
         --bodyTextColorWhite: #fff;
 
         /* Dark Mode Styles */
+        --darkBackground: #000;
         --dark: #082032;
         --medium: #2c394b;
         --accent: #334756;
@@ -227,6 +228,20 @@
             display: block !important;
         }
 
+        .cs-button-solid {
+            background-color: var(--secondary);
+            color: var(--bodyTextColor);
+
+            &:hover {
+                background-color: var(--primary);
+                color: var(--bodyTextColorWhite);
+            }
+
+            &:before {
+                background-color: var(--primary);
+            }
+        }
+
         .cs-button-outline {
             border-color: #fff;
             color: #fff;
@@ -282,7 +297,7 @@
     }
 
     body.dark-mode {
-        background-color: var(--dark);
+        background-color: var(--darkBackground);
 
         p,
         li,
@@ -681,12 +696,7 @@
 @media only screen and (max-width: 1023.5px) {
     body.dark-mode {
         #cs-navigation {
-            background-color: var(--dark);
-
-            .cs-logo {
-                /* makes it white */
-                filter: grayscale(1) brightness(1000%);
-            }
+            background-color: var(--darkBackground);
 
             .cs-line {
                 background-color: #fff;
@@ -913,7 +923,7 @@
     body.dark-mode {
         #cs-navigation {
             .cs-drop-ul {
-                background-color: var(--dark);
+                background-color: var(--darkBackground);
             }
 
             .cs-li-link {
@@ -1044,12 +1054,7 @@
 @media only screen and (min-width: 1024px) {
     body.dark-mode {
         #cs-navigation {
-            background-color: var(--dark);
-
-            .cs-logo {
-                /* makes it turn white */
-                filter: grayscale(1) brightness(1000%);
-            }
+            background-color: var(--darkBackground);
 
             .cs-li-link {
                 color: var(--bodyTextColorWhite);
@@ -1242,7 +1247,7 @@
                 height: 100%;
                 width: 100%;
                 background: #000;
-                opacity: 0.7;
+                opacity: 0.35;
                 top: 0;
                 left: 0;
                 z-index: 1;
@@ -1290,8 +1295,8 @@
         }
 
         .cs-logo {
-            /* 210px - 240px */
-            width: clamp(13.125rem, 8vw, 15rem);
+            /* 70px - 80px */
+            width: clamp(4.375rem, 2.667vw, 5rem);
             height: auto;
             display: block;
             /* 28px - 44px */
