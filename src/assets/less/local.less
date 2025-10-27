@@ -292,13 +292,18 @@
         #services-1684 {
             .cs-title,
             .cs-h3,
-            .cs-item-text {
+            .cs-item-text,
+            .cs-link-text,
+            .cs-topper{
                 color: var(--bodyTextColorWhite);
             }
 
             .cs-text,
             .cs-item-text {
                 opacity: 0.8;
+            }
+            .cs-item, {
+                border-left: 1px solid var(--secondary);
             }
         }
     }
@@ -451,6 +456,29 @@
     }
 }
 
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #steps-1209 {
+            .cs-title,
+            .cs-h3,
+            .cs-item-text,
+            .cs-link-text,
+            .cs-topper{
+                color: var(--bodyTextColorWhite);
+            }
+            .cs-number{
+                border-color:  var(--secondary);
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text,
+            .cs-item-text {
+                opacity: 0.8;
+                color:  var(--bodyTextColorWhite) ;
+            }
+        }
+    }
+}
 
 /*-- -------------------------- -->
 <---           Logos            -->
