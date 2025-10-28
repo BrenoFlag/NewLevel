@@ -1,0 +1,4 @@
+# Runtime membership data is generated automatically by the Stripe webhook.
+# Keep this directory so the function has a predictable place to write files.
+*
+!.gitignore

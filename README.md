@@ -463,3 +463,14 @@ site_url: https://testing-decapbridge.netlify.app
 
 2. Push changes to the repo and test the authentication system. As the admin of the site, your login credentials to access the Decap dashboard are the same as your decapbridge.com credentials.
 3. Invite your client from your decapbridge dashboard. This will create a decapbridge collaborator account for them. From there, they will be able to access their Decap dashboard, reset their password etc.
+
+## Local membership & booking setup
+
+1. Copy the provided `.env.example` file to `.env` and fill in your real keys.
+2. Run `netlify dev` so that Eleventy and the serverless functions run locally at the same time. This exposes the functions under `/.netlify/functions/*`.
+3. When testing Stripe webhooks locally, open a new terminal and run:
+   ```bash
+   stripe listen --forward-to localhost:8888/.netlify/functions/stripe-webhook
+   ```
+4. Add `BASIC_PRICE_ID` and `PREMIUM_PRICE_ID` to your Netlify environment variables before deploying live so checkout buttons know which Stripe prices to request.
+5. The secret booking link emailed to members comes from `CALENDLY_SECRET_BOOKING_URL`. Leave it blank to fall back to the public Calendly page until you have a private URL.

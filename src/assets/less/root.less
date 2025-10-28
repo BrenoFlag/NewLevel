@@ -11,6 +11,20 @@
 
 /* CodeStitch Core Styles + Reset */
 @media only screen and (min-width: 0rem) {
+    /*
+    |------------------------------------------------------------
+    | Calendly Embed Styling
+    | These small polish touches help the inline booking widget
+    | match the rest of the site's rounded, elevated look.
+    |------------------------------------------------------------
+    */
+    .calendly-inline-widget {
+        width: 100%;
+        border-radius: (12/16rem);
+        overflow: hidden;
+        box-shadow: 0 (10/16rem) (30/16rem) rgba(0, 0, 0, 0.08);
+        background: #fff;
+    }
     /* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     :root {
 

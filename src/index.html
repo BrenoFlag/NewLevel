@@ -187,6 +187,44 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 </section>
 
 <!-- ============================================ -->
+<!--                 Membership Pricing            -->
+<!-- ============================================ -->
+
+<section id="pricing" style="padding: var(--sectionPadding);">
+    <div class="cs-container">
+        <div class="cs-content" style="text-align: center; max-width: 52rem; margin: 0 auto 2rem;">
+            <span class="cs-topper">Membership</span>
+            <h2 class="cs-title">Choose the membership tier that matches your vision.</h2>
+            <p class="cs-text">
+                Secure your retainer in minutes. Pick a plan, enter the best email for confirmations,
+                and we will redirect you to Stripe Checkout to finalize your subscription securely.
+            </p>
+        </div>
+        <div style="display: grid; gap: 1.5rem; max-width: 32rem; margin: 0 auto;">
+            <div style="display: grid; gap: 1rem;">
+                <button class="cs-button-solid btn" data-plan="basic" data-membership-button data-price-id="__BASIC_PRICE_ID__" id="btn-basic">
+                    Join Basic Membership
+                </button>
+                <button class="cs-button-solid btn" data-plan="premium" data-membership-button data-price-id="__PREMIUM_PRICE_ID__" id="btn-premium">
+                    Join Premium Membership
+                </button>
+            </div>
+            <div style="display: grid; gap: 0.5rem; text-align: left;">
+                <label for="memberEmail" class="cs-text" style="font-weight: 600;">
+                    Email for confirmation
+                </label>
+                <input id="memberEmail" type="email" name="memberEmail" required
+                       style="padding: 0.75rem 1rem; border-radius: 0.5rem; border: 1px solid rgba(0,0,0,0.15); font-size: 1rem;">
+                <p class="cs-text" data-membership-feedback role="status" style="min-height: 1.5rem;"></p>
+                <p class="cs-text" style="font-size: 0.9rem; opacity: 0.8;">
+                    Tip: add this email to your inbox safe list so receipts and the member booking link never get lost.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
 <!--                   Logos                      -->
 <!-- ============================================ -->
 
@@ -212,4 +250,5 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 
 {% include 'sections/cta.html' %}
+<script type="module" src="/assets/js/membership.js"></script>
 {% endblock %}

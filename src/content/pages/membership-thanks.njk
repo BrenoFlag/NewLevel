@@ -1,0 +1,32 @@
+---
+title: Membership Activated
+layout: layouts/base.html
+permalink: /membership/thanks/index.html
+---
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<section style="padding: var(--sectionPadding);">
+    <div class="cs-container" style="max-width: 48rem;">
+        <h1 class="cs-title">Membership activated</h1>
+        <p class="cs-text">Check your email for your member-only booking link.</p>
+        <p class="cs-text" id="checkout-status" role="status"></p>
+    </div>
+</section>
+
+<script>
+    // Display a friendly confirmation if Stripe redirects back with a session id in the URL.
+    (function () {
+        const statusTarget = document.getElementById("checkout-status");
+        if (!statusTarget) return;
+
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get("session_id");
+
+        if (sessionId) {
+            statusTarget.textContent = "Order confirmed. Welcome to the community!";
+        }
+    })();
+</script>
+{% endblock %}

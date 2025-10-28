@@ -1,0 +1,50 @@
+---
+title: Book an Appointment
+layout: layouts/base.html
+permalink: /book/index.html
+eleventyNavigation:
+  key: Book
+  order: 40
+---
+
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<section id="booking" class="cs-section" style="padding: var(--sectionPadding);">
+    <div class="cs-container">
+        <h1 class="cs-title">Book an Appointment</h1>
+        <p class="cs-text">Schedule time with our team using the calendar below.</p>
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/breno-flag/consultation?hide_event_type_details=1&hide_gdpr_banner=1"
+             style="min-width:320px;height:820px"></div>
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <noscript>
+            <p class="cs-text">
+                Calendly requires JavaScript. You can still book by visiting
+                <a href="https://calendly.com/breno-flag/consultation">https://calendly.com/breno-flag/consultation</a>.
+            </p>
+        </noscript>
+    </div>
+</section>
+
+<script>
+    // Resize the Calendly embed to fit the remaining viewport height for a polished experience.
+    (function () {
+        const widget = document.querySelector(".calendly-inline-widget");
+        if (!widget) return;
+
+        function resizeWidget() {
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            const header = document.getElementById("cs-navigation");
+            const footer = document.querySelector("footer");
+            const headerHeight = header ? header.offsetHeight : 0;
+            const footerHeight = footer ? footer.offsetHeight : 0;
+            const availableSpace = Math.max(600, viewportHeight - headerHeight - footerHeight - 32);
+            widget.style.height = `${availableSpace}px`;
+        }
+
+        window.addEventListener("resize", resizeWidget);
+        resizeWidget();
+    })();
+</script>
+{% endblock %}

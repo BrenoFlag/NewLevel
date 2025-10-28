@@ -2,6 +2,11 @@
   publish = "public/"
   command = "npm run build"
 
+[functions]
+  directory = "netlify/functions"
+  # Stripe webhooks need the raw request body for signature verification.
+  # Docs: https://docs.netlify.com/functions/overview/#event-object
+
 [[plugins]]
 package = "netlify-plugin-cache"
 
