@@ -10,3 +10,11 @@ package = "netlify-plugin-cache"
     "public/assets/images", # Processed images - adjust to match your outputDir
     ".cache" # Remote Assets
   ]
+
+[functions]
+  directory = "netlify/functions"
+  # Stripe webhooks must receive the raw request body. Netlify passes it through when
+  # you verify the signature manually as shown here: https://ntl.fyi/raw-body
+
+[functions."stripe-webhook"]
+  included_files = ["netlify/functions/_data/members.json"]

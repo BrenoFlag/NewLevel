@@ -211,5 +211,41 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 </section>
 
 
+<!-- ============================================ -->
+<!--                Membership Pricing             -->
+<!-- ============================================ -->
+
+<section id="pricing-membership">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Memberships</span>
+            <h2 class="cs-title">Choose the plan that fits your growth goals</h2>
+            <p class="cs-text">
+                Membership unlocks ongoing PR support plus access to our member-only booking link. Pick a plan and enter the
+                email address where you would like the confirmation sent.
+            </p>
+        </div>
+        <div class="cs-button-group" id="pricing">
+            <!-- Buttons carry placeholder price IDs so we never expose live keys in the repository. -->
+            <button class="cs-button-solid btn" data-plan="basic" data-price-id="__BASIC_PRICE_ID__" id="btn-basic">
+                Join Basic Membership
+            </button>
+            <button class="cs-button-solid btn" data-plan="premium" data-price-id="__PREMIUM_PRICE_ID__" id="btn-premium">
+                Join Premium Membership
+            </button>
+        </div>
+        <div class="cs-form">
+            <label class="cs-text" for="memberEmail">Email for confirmation</label>
+            <input type="email" id="memberEmail" name="memberEmail" placeholder="you@example.com" required>
+            <!-- Status area used by membership.js to display validation or error messages. -->
+            <p class="cs-text" id="membershipMessage" aria-live="polite"></p>
+        </div>
+    </div>
+</section>
+
+<!-- Membership logic is bundled separately so we can reuse the exported helper later if needed. -->
+<script type="module" src="/assets/js/membership.js"></script>
+
+
 {% include 'sections/cta.html' %}
 {% endblock %}

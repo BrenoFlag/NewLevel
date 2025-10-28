@@ -1,0 +1,65 @@
+---
+title: Book an Appointment
+layout: layouts/base.njk
+permalink: /book/index.html
+eleventyNavigation:
+  key: Book
+  order: 40
+---
+
+<section class="cs-container" id="booking-page">
+    {#
+        Simple page heading keeps typography consistent with the rest of the site.
+        The `cs-title` class is already defined in the global styles, so we reuse it.
+    #}
+    <h1 class="cs-title">Book an Appointment</h1>
+    {# Inline Calendly widget embeds directly into the page so visitors never leave the site. #}
+    <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/breno-flag/consultation?hide_event_type_details=1&hide_gdpr_banner=1"
+        style="min-width:320px;height:820px"
+    ></div>
+    {# Calendly's script powers the embed. Loading it asynchronously keeps the page responsive. #}
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    {# Users without JavaScript still get a direct link to the booking page. #}
+    <noscript>
+        <p>
+            JavaScript is required to view the booking calendar here. Visit
+            <a href="https://calendly.com/breno-flag/consultation">Calendly</a>
+            to reserve a time directly.
+        </p>
+    </noscript>
+</section>
+
+<script>
+    // Wrap everything in DOMContentLoaded so we only run once the markup above exists.
+    document.addEventListener("DOMContentLoaded", () => {
+        const widget = document.querySelector(".calendly-inline-widget");
+        if (!widget) return; // Fail gracefully if Calendly changes markup.
+
+        /**
+         * Adjusts the Calendly iframe height so it fills the viewport without
+         * hiding beneath the header or footer. We keep a little extra spacing so
+         * the layout can breathe on small screens.
+         */
+        const adjustWidgetHeight = () => {
+            const header = document.getElementById("cs-navigation");
+            const footer = document.getElementById("cs-footer-275");
+            const headerHeight = header ? header.offsetHeight : 0;
+            const footerHeight = footer ? footer.offsetHeight : 0;
+            const breathingRoom = 40; // pixels of padding so content never feels cramped.
+            const availableHeight = window.innerHeight - headerHeight - footerHeight - breathingRoom;
+
+            // Only override Calendly's default if there is meaningful vertical space to fill.
+            if (availableHeight > 600) {
+                widget.style.height = `${availableHeight}px`;
+            } else {
+                widget.style.height = "820px"; // Calendly's suggested default fallback height.
+            }
+        };
+
+        // Run immediately and also whenever the viewport changes size.
+        adjustWidgetHeight();
+        window.addEventListener("resize", adjustWidgetHeight);
+    });
+</script>

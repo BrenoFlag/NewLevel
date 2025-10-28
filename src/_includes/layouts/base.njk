@@ -1,0 +1,23 @@
+{#
+    This layout bridges Eleventy's layout data property with our existing base.html layout.
+    Pages that set `layout: layouts/base.njk` in their front matter can now drop raw HTML
+    content directly into the `{{ content }}` placeholder below. We extend the existing
+    base.html so we keep all of the shared head, header, and footer markup in one place.
+#}
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    {{ super() }}
+    {#
+        If a page provides extra head markup through a `pageHead` variable we output it here.
+        This keeps things flexible without forcing every page to use block syntax manually.
+    #}
+    {% if pageHead %}
+        {{ pageHead | safe }}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    {# The page body is simply the rendered content of the child template. #}
+    {{ content | safe }}
+{% endblock %}

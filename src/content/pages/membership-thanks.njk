@@ -1,0 +1,25 @@
+---
+title: Membership Activated
+layout: layouts/base.njk
+permalink: /membership/thanks/index.html
+---
+
+<section class="cs-container" id="membership-thanks">
+    <h1 class="cs-title">Membership activated. Check your email for your member-only booking link.</h1>
+    <p class="cs-text" id="orderStatus">
+        We are sending all the details right now. You can close this tab once you are done.
+    </p>
+</section>
+
+<script>
+    // Simple enhancement: show an extra confirmation when Stripe redirects back with a session id.
+    document.addEventListener("DOMContentLoaded", () => {
+        const statusParagraph = document.getElementById("orderStatus");
+        if (!statusParagraph) return;
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.has("session_id")) {
+            statusParagraph.textContent = "Order confirmed. We just emailed your receipt and booking link.";
+        }
+    });
+</script>
