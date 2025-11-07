@@ -78,7 +78,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             </p>
             <a href="/about/" class="cs-button-solid">Discover Our Story</a>
         </div>
-        <picture class="cs-picture">
+        <picture class="cs-picture cs-picture--light">
             <!--Mobile Image-->
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
@@ -91,7 +91,22 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="library" width="1280" height="568" loading="lazy" decoding="async">
+            <img src="{% getUrl "/assets/images/nuLevelnvite.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="NuLevel Group team reviewing brand strategy" width="1280" height="568" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture cs-picture--dark">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/nuLevelnviteDark.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="NuLevel Group team reviewing brand strategy" width="1280" height="568" loading="lazy" decoding="async">
         </picture>
     </div>
 </section>
