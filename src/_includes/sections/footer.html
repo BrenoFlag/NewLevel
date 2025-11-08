@@ -17,10 +17,14 @@
                 <a class="cs-social-link" aria-label="visit google profile" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
                     <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="google" width="11" height="11">
                 </a>
+                -->
+
                 <a class="cs-social-link" aria-label="visit facebook profile" href="{{ client.socials.facebook }}" target="_blank" rel="noopener">
                     <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/facebook.svg" alt="facebook" width="6" height="11">
                 </a>
-                -->
+                <a class="cs-social-link" aria-label="visit Linkedin profile" href="{{ client.socials.linkedin }}" target="_blank" rel="noopener">
+                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/linkedin.svg" alt="linkedin" width="11" height="11">
+                </a>
                 <a class="cs-social-link" aria-label="visit instagram profile" href="{{ client.socials.instagram }}" target="_blank" rel="noopener">
                     <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/instagram.svg" alt="instagram" width="11" height="11">
                 </a>
@@ -54,10 +58,13 @@
             </li>
             <li class="cs-contact-li">
                 <a class="cs-contact-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
+                   <!--
                     {{ client.address.lineOne }}, <br>
                     {{ client.address.lineTwo }}, <br>
+                    -->
                     {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
+
+                   <!-- {{ client.address.zip }} -->
                 </a>
             </li>
             <li class="cs-contact-li">
@@ -67,5 +74,13 @@
                 <a class="cs-contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
             </li>
         </ul>
+        <div class="cs-container">
+            <span class="cs-header" style="padding-top: 32px">
+                © Copyright 2025 - Designed &amp; Developed By
+                <a class="cs-nav-link" href="https://elevatewebsitesdesign.com/" target="_blank">
+                    Elevate Websites Design
+                </a>
+            </span>
+        </div>
     </div>
 </footer>
