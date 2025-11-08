@@ -72,6 +72,10 @@
                 left: 0;
             }
         }
+
+        .cs-picture--dark {
+            display: none;
+        }
     }
 }
 
@@ -119,6 +123,14 @@
 
             .cs-icon {
                 filter: grayscale(1) brightness(1000%);
+            }
+
+            .cs-picture--light {
+                display: none;
+            }
+
+            .cs-picture--dark {
+                display: block;
             }
         }
     }
@@ -296,6 +308,22 @@
             .cs-topper{
                 color: var(--bodyTextColorWhite);
             }
+            .cs-item{
+                border-bottom: 1px solid white;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 48rem) {
+    body.dark-mode {
+        #services-1684 {
+            .cs-title,
+            .cs-h3,
+            .cs-item-text,
+            .cs-link-text,
+            .cs-topper{
+                color: var(--bodyTextColorWhite);
+            }
 
             .cs-text,
             .cs-item-text {
@@ -303,11 +331,161 @@
             }
             .cs-item {
                 border-left: 1px solid var(--secondary);
+                border-bottom: 0;
             }
         }
     }
 }
 
+
+
+/*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-585 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-card-group {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: (20/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            min-height: (290/16rem);
+            /* 16px - 24px left & right */
+            padding: (16/16rem) clamp(1rem, 1.8vw, 1.5rem);
+            border-bottom: 1px solid var(--headerColor);
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            &:last-of-type {
+                border: none;
+            }
+        }
+
+        .cs-h3 {
+            font-size: (24/16rem);
+            font-weight: 500;
+            line-height: 1.2em;
+            text-align: left;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--primary);
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: left;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-number {
+            font-size: (61/16rem);
+            font-weight: 900;
+            line-height: 1.2em;
+            /* auto pushes against other elements in a flexbox, this one forces it to be at the bottom of the flexbox */
+            margin: auto 0 0 0;
+            color: var(--primary);
+            display: block;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-585 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-card-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .cs-item {
+            width: 48%;
+            &:nth-of-type(3) {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #steps-585 {
+        .cs-card-group {
+            flex-wrap: nowrap;
+        }
+
+        .cs-item {
+            border-bottom: none;
+            border-right: 1px solid var(--headerColor);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #steps-585 {
+            .cs-topper {
+                color: var(--bodyTextColorWhite);
+            }
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item {
+                border-color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item-text {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+
+            .cs-h3,
+            .cs-number {
+                color: var(--primaryLight);
+            }
+        }
+    }
+}
 /*-- -------------------------- -->
 <---           why choose us    -->
 <--- -------------------------- -*/
@@ -480,6 +658,10 @@
                 &:after {
                     background-image: url("/assets/svgs/darkModeSvgs/testDottedLineWhite.svg");
                 }
+            }
+
+            .cs-icon--invert {
+                filter: brightness(0) invert(1);
             }
         }
     }

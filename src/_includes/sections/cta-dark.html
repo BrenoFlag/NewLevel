@@ -1,0 +1,32 @@
+<!-- ============================================ -->
+<!--                 CTA (Dark)                   -->
+<!-- ============================================ -->
+
+<section id="cta-51-dark">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Contact Us</span>
+            <h2 class="cs-title">Let’s Build Your Next Level of Visibility</h2>
+            <p class="cs-text">
+                NuLevel Group helps luxury wedding, design, and architecture brands gain the global visibility they deserve. Through intentional PR, media strategy, and digital storytelling, we take your brand from local recognition to international prestige.
+            </p>
+            <a href="/contact/" class="cs-button-solid">Start the Conversation</a>
+        </div>
+    </div>
+    <!-- Background Image-->
+    <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 640, height: 812 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 640, height: 812 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 640, height: 812 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2048, height: 750 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2048, height: 750 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2048, height: 750 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2500, height: 555 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2500, height: 555 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2500, height: 555 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/ctaDark.png" | resize({ width: 2500, height: 555 }) | jpeg %}" alt="cabinets" width="1920" height="426" loading="lazy" decoding="async">
+    </picture>
+</section>

@@ -47,21 +47,36 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     </div>
 
     <!-- Background Image -->
-    <picture class="cs-background">
+    <picture class="cs-background cs-background--light">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
         <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
         <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/wedding.jpg" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl "/assets/images/wedding.jpg" | resize({ width:1920, height:1200 }) | jpeg %}" alt="library" width="1920" height="1200" loading="eager" decoding="async">
-   </picture>
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroBright.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/heroBright.png" | resize({ width:1920, height:1200 }) | jpeg %}" alt="NuLevel Group team at work" width="1920" height="1200" loading="eager" decoding="async">
+    </picture>
+    <picture class="cs-background cs-background--dark">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/heroDark.png" | resize({ width: 1920, height: 1200 }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/heroDark.png" | resize({ width:1920, height:1200 }) | jpeg %}" alt="NuLevel Group team at work" width="1920" height="1200" loading="eager" decoding="async">
+    </picture>
 </section>
 <!-- ============================================ -->
 <!--                 Side By Side                 -->
@@ -78,20 +93,35 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             </p>
             <a href="/about/" class="cs-button-solid">Discover Our Story</a>
         </div>
-        <picture class="cs-picture">
+        <picture class="cs-picture cs-picture--light">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
             <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
             <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/aboutus.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/aboutus.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="library" width="1280" height="568" loading="lazy" decoding="async">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/NuLevelnviteBright1.png" | resize({ width:1280, height:568 }) | jpeg %}" alt="NuLevel Group team reviewing brand strategy" width="1280" height="568" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture cs-picture--dark">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | avif %}" type="image/avif">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width: 1280, height: 568 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/nuLevelnviteDark.jpeg" | resize({ width:1280, height:568 }) | jpeg %}" alt="NuLevel Group team reviewing brand strategy" width="1280" height="568" loading="lazy" decoding="async">
         </picture>
     </div>
 </section>
@@ -135,7 +165,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                          alt="icon" width="20" height="20" aria-hidden="true" />
                 </a>
             </li>
-            <li class="cs-item">
+            <li class="cs-item" style="border-bottom-width: 0px;">
                 <h3 class="cs-h3">Digital Marketing</h3>
                 <p class="cs-item-text">
                     Expanding your story’s reach online.
@@ -150,6 +180,8 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         </ul>
     </div>
 </section>
+
+
 
 <!-- ============================================ -->
 <!--                   why choose us              -->
@@ -170,15 +202,21 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <h2>What sets us apart</h2>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <span class="cs-number">01</span>
+                <span class="cs-number">
+                    <img class="cs-icon cs-icon--invert" loading="lazy" decoding="async" src="/assets/svgs/international.svg" alt="Speedometer icon representing fast load times" width="120" height="120">
+                </span>
                 <h3 class="cs-h3">Boutique strategy, global relationships</h3>
             </li>
             <li class="cs-item">
-                <span class="cs-number">02</span>
+                <span class="cs-number">
+                     <img class="cs-icon cs-icon--invert" loading="lazy" decoding="async" src="/assets/svgs/editorial-design.svg" alt="Speedometer icon representing fast load times" width="120" height="120">
+                </span>
                 <h3 class="cs-h3">Editorial storytelling that amplifies artistry</h3>
             </li>
             <li class="cs-item">
-                <span class="cs-number">03</span>
+                <span class="cs-number">
+                     <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/handshake-svgrepo-com.svg" data-light-src="/assets/svgs/handshake-svgrepo-com.svg" data-dark-src="/assets/svgs/handshake-svgrepo-comWhite.svg" alt="Speedometer icon representing fast load times" width="120" height="120">
+                </span>
                 <h3 class="cs-h3">A personal, intentional partnership approach</h3>
             </li>
         </ul>
@@ -212,4 +250,5 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 
 {% include 'sections/cta.html' %}
+{% include 'sections/cta-dark.html' %}
 {% endblock %}

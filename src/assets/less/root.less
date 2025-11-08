@@ -1,3 +1,57 @@
+/* =========================
+   LATO — body (400, 700, italic)
+   ========================= */
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/lato-v25-latin/lato-v25-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/lato-v25-latin/lato-v25-latin-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/lato-v25-latin/lato-v25-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   BODONI MODA — headlines (500, 700)
+   ========================= */
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("/assets/fonts/bodoni-moda-v28-latin/bodoni-moda-v28-latin-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("/assets/fonts/bodoni-moda-v28-latin/bodoni-moda-v28-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   GREAT VIBES — accent script (regular)
+   ========================= */
+@font-face {
+  font-family: "Great Vibes";
+  src: url("/assets/fonts/great-vibes-v21-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // CODESTITCH GLOBAL STYLES
 // Core stylesheet containing CSS variables, dark mode styles, base element
@@ -18,6 +72,9 @@
         --secondary: #fff;
         --background: #fff;
         --hoverColor: #fff;
+        --buttonColor: #C9C9C9;
+        --buttonTextColor: #1A1A1A;
+        -buttonColorHover: #E3E3E3;
 
         --headerColor: #000;
         --bodyTextColor: #000;
@@ -28,6 +85,9 @@
         --dark: #082032;
         --medium: #2c394b;
         --accent: #334756;
+        --buttonColorDark: #927740;
+        --buttonTextColorDark: #1A1A1A;
+        --buttonColorHoverDark: #C2B072;
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -111,7 +171,7 @@
         z-index: 1;
         position: relative;
         display: inline-block;
-        background-color: var(--primary);
+        background-color: var(--buttonColor);
         width: auto;
         padding: (16/16rem) (32/16rem);
         text-decoration: none;
@@ -124,14 +184,14 @@
 
 
         // Transition Properties
-        color: var(--bodyTextColorWhite);
+        color: var(--buttonTextColor);
         transition: color 0.3s, background-color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
 
         &:hover {
-            color: var(--bodyTextColor);
-            background-color: var(--hoverColor);
+            color: var(--buttonTextColor);
+            background-color: var(--buttonColorHover);
 
             &:before {
                 width: 100%;
@@ -146,7 +206,7 @@
             content: "";
             opacity: 1;
             display: block;
-            background-color: var(--hoverColor);
+            background-color: var(--buttonColorHover);
             height: 100%;
 
             //Transition properties
@@ -229,16 +289,22 @@
         }
 
         .cs-button-solid {
-            background-color: var(--secondary);
-            color: var(--bodyTextColor);
+            background-color: var(--buttonColorDark);
+            color: var(--buttonTextColorDark);
+
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8em 1.6em;
+            transition: all 0.3s ease;
 
             &:hover {
-                background-color: var(--primary);
-                color: var(--bodyTextColorWhite);
+                background-color: var(--buttonColorHoverDark);
+                color: var(--buttonTextColorDark);
             }
 
             &:before {
-                background-color: var(--primary);
+                background-color: var(--buttonColorHoverDark);
             }
         }
 
@@ -696,14 +762,14 @@
 @media only screen and (max-width: 1023.5px) {
     body.dark-mode {
         #cs-navigation {
-            background-color: var(--darkBackground);
+            background-color: #000;
 
             .cs-line {
                 background-color: #fff;
             }
 
             .cs-ul-wrapper {
-                background-color: var(--medium);
+                background-color: #000;
             }
 
             .cs-li-link {
@@ -928,10 +994,10 @@
 
             .cs-li-link {
                 &.cs-drop-link {
-                    background-color: var(--medium);
+                    background-color: #000;
 
                     &:hover {
-                        background-color: var(--light);
+                        background-color: #111;
                     }
                 }
             }
@@ -1188,7 +1254,8 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #cta-51 {
+    #cta-51,
+    #cta-51-dark {
         padding: var(--sectionPadding);
         position: relative;
 
@@ -1261,6 +1328,22 @@
                 width: 100%;
                 object-fit: cover;
             }
+        }
+    }
+
+    #cta-51-dark {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #cta-51 {
+            display: none;
+        }
+
+        #cta-51-dark {
+            display: block;
         }
     }
 }
@@ -1498,4 +1581,42 @@
             width: auto;
         }
     }
+}
+
+@font-sans: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@font-headline: "Bodoni Moda", Georgia, "Times New Roman", Times, serif;
+@font-accent: "Great Vibes", "Brush Script MT", cursive;
+
+html, body {
+  font-family: @font-sans;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .display, .section-title, .hero-title {
+  font-family: @font-headline;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+h4, .subhead, .section-subtitle {
+  font-family: @font-headline;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+p, li, nav, button, input, textarea, .copy, .cta {
+  font-family: @font-sans;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+.accent, .script, .tagline {
+  font-family: @font-accent;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }

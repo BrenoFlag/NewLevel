@@ -35,7 +35,7 @@
                 width: 100%;
                 height: 100%;
                 background: var(--darkBackground);
-                opacity: 0.2;
+                opacity: 0.3;
                 position: absolute;
                 display: block;
                 top: 0;
@@ -53,6 +53,10 @@
                 width: 100%;
                 object-fit: cover;
             }
+        }
+
+        .cs-background--dark {
+            display: none;
         }
 
         .cs-container {
@@ -128,8 +132,16 @@
         #hero-1426 {
             .cs-background {
                 &:before {
-                    opacity: 0.2;
+                    opacity: 0.3;
                 }
+            }
+
+            .cs-background--light {
+                display: none;
+            }
+
+            .cs-background--dark {
+                display: block;
             }
         }
     }
