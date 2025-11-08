@@ -2,6 +2,12 @@
 //    The Dark Mode System
 //
 
+const calendlyColors = {
+    light: { color: "#c9c9c9", textColor: "#1a1a1a" },
+    dark: { color: "#927740", textColor: "#1a1a1a" },
+};
+let calendlyInitTimer;
+
 // updates the logo sources based on the current mode
 function updateLogoSources(isDarkMode) {
     const logos = document.querySelectorAll('[data-light-src][data-dark-src]');
@@ -15,16 +21,47 @@ function updateLogoSources(isDarkMode) {
     });
 }
 
+function initCalendlyBadge(isDarkMode) {
+    if (calendlyInitTimer) {
+        clearTimeout(calendlyInitTimer);
+    }
+
+    const attemptInit = () => {
+        if (!window.Calendly || typeof window.Calendly.initBadgeWidget !== "function") {
+            calendlyInitTimer = window.setTimeout(attemptInit, 200);
+            return;
+        }
+
+        if (typeof window.Calendly.destroyBadgeWidget === "function") {
+            window.Calendly.destroyBadgeWidget();
+        }
+
+        const palette = isDarkMode ? calendlyColors.dark : calendlyColors.light;
+
+        window.Calendly.initBadgeWidget({
+            url: "https://calendly.com/nulevelgroup/30min",
+            text: "Book a consultation",
+            color: palette.color,
+            textColor: palette.textColor,
+            branding: true,
+        });
+    };
+
+    attemptInit();
+}
+
 // helper functions to toggle dark mode
 function enableDarkMode() {
     document.body.classList.add("dark-mode");
     updateLogoSources(true);
     sessionStorage.setItem("theme", "dark");
+    initCalendlyBadge(true);
 }
 function disableDarkMode() {
     document.body.classList.remove("dark-mode");
     updateLogoSources(false);
     sessionStorage.setItem("theme", "light");
+    initCalendlyBadge(false);
 }
 
 // determines a new users dark mode preferences
