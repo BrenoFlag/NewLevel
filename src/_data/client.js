@@ -1,8 +1,8 @@
 module.exports = {
     name: "Code Stitch Web Designs",
     email: "hello@nulevelgroup.org",
-    phoneForTel: "555-779-4407",
-    phoneFormatted: "(555) 779-4407",
+    phoneForTel: "7707996416",
+    phoneFormatted: "7707996416",
     address: {
         lineOne: "First Address Line",
         lineTwo: "Second Address Line",
