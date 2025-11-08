@@ -7,9 +7,41 @@ permalink: "/contact/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <title>Contact New Level Group | Partner with a Global Wedding PR Agency</title>
+    <meta name="description" content="Let’s take your brand to the next level. Contact New Level Group to start building your global presence through personalized PR, media, and digital strategies.">
+    <meta name="keywords" content="Contact Luxury Wedding PR Agency, Wedding Publicist Consultation, Global Wedding Brand Visibility, Wedding PR Inquiry, Architecture &amp; Design PR Agency Contact">
+    <meta name="author" content="New Level Group">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nulevelgroup.com/contact">
+
+    <meta property="og:site_name" content="New Level Group">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Start Your Next Level of Visibility | Contact New Level Group">
+    <meta property="og:description" content="We’d love to connect and learn about your vision. Reach out to begin your luxury wedding PR journey.">
+    <meta property="og:url" content="https://nulevelgroup.com/contact">
+    <meta property="og:image" content="https://nulevelgroup.com/assets/og-default.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact New Level Group | Luxury Wedding PR Agency">
+    <meta name="twitter:description" content="Connect with our team to discuss PR, media, and digital strategy for your brand.">
+
     <link rel="stylesheet" href="/assets/css/contact.css">
     <link rel="preload" as="image" href="{% getUrl "/assets/images/contactUsBanner.jpeg" | resize({ width: 640, height: 600 }) | avif %}"/>
     <link rel="preload" as="image" href="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | avif %}"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact New Level Group",
+      "url": "https://nulevelgroup.com/contact",
+      "description": "Connect with New Level Group to discuss wedding and design PR, media relations, and digital visibility.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "New Level Group"
+      }
+    }
+    </script>
 {% endblock %}
 
 {% block body %}

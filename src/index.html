@@ -8,6 +8,24 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <title>Luxury Wedding PR Agency | Global Brand Visibility Experts | New Level Group</title>
+    <meta name="description" content="New Level Group is a boutique luxury PR agency for wedding, architecture, and design brands. We turn creativity into global visibility through storytelling, media strategy, and digital excellence.">
+    <meta name="keywords" content="High-End Wedding Public Relations, Luxury Wedding PR Agency, Wedding Brand Visibility Expert, Global Wedding PR Agency, Wedding Media Relations, Architecture &amp; Design Wedding PR, International Luxury Wedding PR">
+    <meta name="author" content="New Level Group">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nulevelgroup.com/">
+
+    <meta property="og:site_name" content="New Level Group">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Elevating Wedding Brands to Global Recognition | New Level Group">
+    <meta property="og:description" content="We help luxury wedding, architecture, and design brands gain the global visibility they deserve through strategic PR, media relations, and digital marketing.">
+    <meta property="og:url" content="https://nulevelgroup.com/">
+    <meta property="og:image" content="https://nulevelgroup.com/assets/og-default.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Wedding PR Agency | New Level Group">
+    <meta name="twitter:description" content="Boutique PR for luxury wedding and design brands ready to be seen on the world’s stage.">
+
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css" />
 
@@ -25,6 +43,37 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
     <!-- {% include "components/home-schema.html" %} -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://nulevelgroup.com#organization",
+          "name": "New Level Group",
+          "url": "https://nulevelgroup.com",
+          "logo": "https://nulevelgroup.com/assets/logo.png",
+          "description": "Luxury wedding public relations agency helping creative brands achieve global visibility.",
+          "email": "hello@nulevelgroup.com",
+          "sameAs": [
+            "https://instagram.com/nulevelgroup",
+            "https://linkedin.com/company/nulevelgroup",
+            "https://pinterest.com/nulevelgroup"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "New Level Group",
+          "url": "https://nulevelgroup.com",
+          "description": "Boutique public relations for luxury wedding, architecture, and design brands.",
+          "publisher": {
+            "@id": "https://nulevelgroup.com#organization"
+          }
+        }
+      ]
+    }
+    </script>
 {% endblock %}
 
 {% block body %}
