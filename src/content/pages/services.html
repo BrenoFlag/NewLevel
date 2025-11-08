@@ -7,9 +7,48 @@ permalink: "/services/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <title>Wedding Public Relations, Media Relations &amp; Digital Marketing | New Level Group</title>
+    <meta name="description" content="Visibility isn’t luck — it’s strategy. New Level Group provides PR, media, and digital marketing retainers for luxury wedding, architecture, and design brands seeking intentional global growth.">
+    <meta name="keywords" content="Wedding Public Relations, Wedding Media Relations, Digital Marketing for Wedding Brands, Luxury Wedding PR Retainer, Global Wedding Visibility Strategy, High-End Wedding PR Services">
+    <meta name="author" content="New Level Group">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nulevelgroup.com/services">
+
+    <meta property="og:site_name" content="New Level Group">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Expertise in Luxury Wedding PR &amp; Media Strategy | New Level Group">
+    <meta property="og:description" content="Strategic public relations, media relations, and digital marketing designed for luxury wedding and design professionals worldwide.">
+    <meta property="og:url" content="https://nulevelgroup.com/services">
+    <meta property="og:image" content="https://nulevelgroup.com/assets/og-default.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding PR, Media Relations &amp; Digital Marketing | New Level Group">
+    <meta name="twitter:description" content="Monthly retainer services for brands ready to scale their visibility with intention.">
+
     <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
     <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
     <link rel="stylesheet" href="/assets/css/services.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Public Relations, Media Relations & Digital Marketing",
+      "url": "https://nulevelgroup.com/services",
+      "provider": {
+        "@type": "Organization",
+        "name": "New Level Group",
+        "url": "https://nulevelgroup.com"
+      },
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "Public Relations",
+        "Media Relations",
+        "Digital Marketing"
+      ],
+      "description": "Intentional, retainer-based PR, media, and digital marketing support for luxury wedding and design brands."
+    }
+    </script>
 {% endblock %}
 
 {% block body %}

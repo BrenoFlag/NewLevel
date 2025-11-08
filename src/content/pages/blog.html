@@ -7,8 +7,36 @@ permalink: "/blog/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <title>Insights on Luxury Wedding PR &amp; Visibility | New Level Group Blog</title>
+    <meta name="description" content="Articles and insights on luxury wedding public relations, media relations, and digital visibility for creative professionals ready to scale globally.">
+    <meta name="keywords" content="Wedding PR Insights, Luxury Wedding Marketing Tips, Global Wedding Media Relations, Wedding Brand Visibility Strategy, PR Advice for Creatives">
+    <meta name="author" content="New Level Group">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nulevelgroup.com/blog">
+
+    <meta property="og:site_name" content="New Level Group">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding PR &amp; Visibility Insights | New Level Group Blog">
+    <meta property="og:description" content="Thoughtful, strategic guidance on public relations and visibility for luxury wedding and design brands.">
+    <meta property="og:url" content="https://nulevelgroup.com/blog">
+    <meta property="og:image" content="https://nulevelgroup.com/assets/og-default.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Wedding PR Blog | New Level Group">
+    <meta name="twitter:description" content="Explore articles on visibility strategy, editorial pitching, and global wedding PR.">
+
     <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" />
     <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "New Level Group Blog",
+      "url": "https://nulevelgroup.com/blog",
+      "description": "Insights on luxury wedding PR, media relations, and digital visibility for creative professionals."
+    }
+    </script>
 {% endblock %}
 
 {% block body %}
