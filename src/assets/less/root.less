@@ -72,6 +72,9 @@
         --secondary: #fff;
         --background: #fff;
         --hoverColor: #fff;
+        --buttonColor: #C9C9C9;
+        --buttonTextColor: #1A1A1A;
+        -buttonColorHover: #E3E3E3;
 
         --headerColor: #000;
         --bodyTextColor: #000;
@@ -82,6 +85,9 @@
         --dark: #082032;
         --medium: #2c394b;
         --accent: #334756;
+        --buttonColorDark: #927740;
+        --buttonTextColorDark: #1A1A1A;
+        --buttonColorHoverDark: #C2B072;
 
         /* 13px - 16px */
         --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -165,7 +171,7 @@
         z-index: 1;
         position: relative;
         display: inline-block;
-        background-color: var(--primary);
+        background-color: var(--buttonColor);
         width: auto;
         padding: (16/16rem) (32/16rem);
         text-decoration: none;
@@ -178,14 +184,14 @@
 
 
         // Transition Properties
-        color: var(--bodyTextColorWhite);
+        color: var(--buttonTextColor);
         transition: color 0.3s, background-color 0.3s;
         transition-delay: 0.1s;
         text-align: center;
 
         &:hover {
-            color: var(--bodyTextColor);
-            background-color: var(--hoverColor);
+            color: var(--buttonTextColor);
+            background-color: var(--buttonColorHover);
 
             &:before {
                 width: 100%;
@@ -200,7 +206,7 @@
             content: "";
             opacity: 1;
             display: block;
-            background-color: var(--hoverColor);
+            background-color: var(--buttonColorHover);
             height: 100%;
 
             //Transition properties
@@ -283,16 +289,22 @@
         }
 
         .cs-button-solid {
-            background-color: var(--secondary);
-            color: var(--bodyTextColor);
+            background-color: var(--buttonColorDark);
+            color: var(--buttonTextColorDark);
+
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            padding: 0.8em 1.6em;
+            transition: all 0.3s ease;
 
             &:hover {
-                background-color: var(--primary);
-                color: var(--bodyTextColorWhite);
+                background-color: var(--buttonColorHoverDark);
+                color: var(--buttonTextColorDark);
             }
 
             &:before {
-                background-color: var(--primary);
+                background-color: var(--buttonColorHoverDark);
             }
         }
 
