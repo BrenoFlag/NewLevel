@@ -157,6 +157,10 @@
                 z-index: -1;
             }
         }
+
+        .cs-background--dark {
+            display: none;
+        }
     }
 }
 
@@ -362,6 +366,10 @@
                 object-fit: cover;
             }
         }
+
+        .cs-bg-picture--dark {
+            display: none;
+        }
     }
 }
 
@@ -455,6 +463,16 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
+        #banner-2285 {
+            .cs-background--light {
+                display: none;
+            }
+
+            .cs-background--dark {
+                display: block;
+            }
+        }
+
         #cs-contact-265 {
             .cs-text,
             .cs-title {
@@ -482,6 +500,14 @@
                     /* lets parent background-color bleed through and darken it */
 
                 }
+            }
+
+            .cs-bg-picture--light {
+                display: none;
+            }
+
+            .cs-bg-picture--dark {
+                display: block;
             }
         }
     }

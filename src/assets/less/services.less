@@ -156,6 +156,10 @@
         z-index: -1;
       }
     }
+
+    .cs-background--dark {
+      display: none;
+    }
   }
 }
 
@@ -353,6 +357,10 @@
       }
     }
 
+    .cs-content-image--dark {
+      display: none;
+    }
+
     .cs-flower {
       width: (153/16em);
       height: auto;
@@ -416,6 +424,16 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
+    #banner-2285 {
+      .cs-background--light {
+        display: none;
+      }
+
+      .cs-background--dark {
+        display: block;
+      }
+    }
+
     #content-page-1533 {
       background-color: var(--darkBackground);
 
@@ -432,6 +450,14 @@
 
       .cs-floater {
         opacity: .1;
+      }
+
+      .cs-content-image--light {
+        display: none;
+      }
+
+      .cs-content-image--dark {
+        display: block;
       }
     }
   }

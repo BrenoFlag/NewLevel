@@ -1254,7 +1254,8 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #cta-51 {
+    #cta-51,
+    #cta-51-dark {
         padding: var(--sectionPadding);
         position: relative;
 
@@ -1327,6 +1328,22 @@
                 width: 100%;
                 object-fit: cover;
             }
+        }
+    }
+
+    #cta-51-dark {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #cta-51 {
+            display: none;
+        }
+
+        #cta-51-dark {
+            display: block;
         }
     }
 }

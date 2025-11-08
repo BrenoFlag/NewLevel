@@ -29,7 +29,7 @@ permalink: "/services/"
         </div>
     </div>
     <!--Background Image-->
-    <picture class="cs-background">
+    <picture class="cs-background cs-background--light">
         <!--Mobile Image-->
         <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesBanner.png" | resize({ width: 640, height: 600, position: 'right' }) | avif %}" type="image/avif">
         <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesBanner.png" | resize({ width: 640, height: 600, position: 'right' }) | webp %}" type="image/webp">
@@ -43,6 +43,21 @@ permalink: "/services/"
         <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBanner.png" | resize({ width: 2500, height: 628, position: 'right' }) | webp %}" type="image/webp">
         <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBanner.png" | resize({ width: 2500, height: 628, position: 'right' }) | jpeg %}" type="image/jpeg">
         <img src="{% getUrl "/assets/images/servicesBanner.png" | resize({ width: 1280, height: 568, position: 'right' }) | jpeg %}" alt="library" width="1280" height="568" loading="eager" decoding="async">
+    </picture>
+    <picture class="cs-background cs-background--dark">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/servicesBannerDark.png" | resize({ width: 1280, height: 568, position: 'right' }) | jpeg %}" alt="library" width="1280" height="568" loading="eager" decoding="async">
     </picture>
 </div>
 
@@ -65,7 +80,7 @@ permalink: "/services/"
         <div class="cs-image-group">
             <!--Flower-->
             <!-- <img class="cs-flower" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/flower-graphic.svg" alt="flower" loading="lazy" decoding="async" height="148" width="153"> -->
-            <picture class="cs-background">
+            <picture class="cs-background cs-content-image cs-content-image--light">
                 <!--Mobile Image-->
                 <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/services.png" | resize({ width: 710, height: 690 }) | avif %}" type="image/avif">
                 <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/services.png" | resize({ width: 710, height: 690 }) | webp %}" type="image/webp">
@@ -79,6 +94,21 @@ permalink: "/services/"
                 <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/services.png" | resize({ width: 710, height: 690 }) | webp %}" type="image/webp">
                 <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/services.png" | resize({ width: 710, height: 690 }) | jpeg %}" type="image/jpeg">
                 <img src="{% getUrl "/assets/images/services.png" | resize({ width: 710, height: 690 }) | jpeg %}" alt="library" width="710" height="690" loading="eager" decoding="async">
+            </picture>
+            <picture class="cs-background cs-content-image cs-content-image--dark">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | jpeg %}" type="image/jpeg">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | webp %}" type="image/webp">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | jpeg %}" type="image/jpeg">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | avif %}" type="image/avif">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | webp %}" type="image/webp">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/servicesDark.png" | resize({ width: 710, height: 690 }) | jpeg %}" alt="library" width="710" height="690" loading="eager" decoding="async">
             </picture>
 
             <!--Floating Blob-->
@@ -188,5 +218,6 @@ permalink: "/services/"
 </section>
 
 {% include 'sections/cta.html' %}
+{% include 'sections/cta-dark.html' %}
 
 {% endblock %}

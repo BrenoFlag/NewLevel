@@ -156,6 +156,10 @@
                 z-index: -1;
             }
         }
+
+        .cs-background--dark {
+            display: none;
+        }
     }
 }
 /*-- -------------------------- -->
@@ -300,6 +304,16 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
+        #banner-2285 {
+            .cs-background--light {
+                display: none;
+            }
+
+            .cs-background--dark {
+                display: block;
+            }
+        }
+
         #reviews-67 {
             .cs-title,
             .cs-text,

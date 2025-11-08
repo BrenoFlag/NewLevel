@@ -27,20 +27,35 @@ permalink: "/reviews/"
         </div>
     </div>
     <!--Background Image-->
-    <picture class="cs-background">
+    <picture class="cs-background cs-background--light">
         <!--Mobile Image-->
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 640, height: 600, position: 'right' }) | avif %}" type="image/avif">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 640, height: 600, position: 'right' }) | webp %}" type="image/webp">
-        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 640, height: 600, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 640, height: 600, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 640, height: 600, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 640, height: 600, position: 'right' }) | jpeg %}" type="image/jpeg">
         <!--Tablet Image-->
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2048, height: 942, position: 'right' }) | avif %}" type="image/avif">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2048, height: 942, position: 'right' }) | webp %}" type="image/webp">
-        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2048, height: 942, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2048, height: 942, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2048, height: 942, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2048, height: 942, position: 'right' }) | jpeg %}" type="image/jpeg">
         <!--Desktop Image-->
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2500, height: 628, position: 'right' }) | avif %}" type="image/avif">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2500, height: 628, position: 'right' }) | webp %}" type="image/webp">
-        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 2500, height: 628, position: 'right' }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl "/assets/images/reviewsBanner.jpeg" | resize({ width: 1280, height: 568, position: 'right' }) | jpeg %}" alt="library" width="1280" height="568" loading="eager" decoding="async">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2500, height: 628, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2500, height: 628, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 2500, height: 628, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/reviewsBanner.png" | resize({ width: 1280, height: 568, position: 'right' }) | jpeg %}" alt="library" width="1280" height="568" loading="eager" decoding="async">
+    </picture>
+    <picture class="cs-background cs-background--dark">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 640, height: 600, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2048, height: 942, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | avif %}" type="image/avif">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | webp %}" type="image/webp">
+        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 2500, height: 628, position: 'right' }) | jpeg %}" type="image/jpeg">
+        <img src="{% getUrl "/assets/images/reviewsBannerDark.png" | resize({ width: 1280, height: 568, position: 'right' }) | jpeg %}" alt="library" width="1280" height="568" loading="eager" decoding="async">
     </picture>
 </div>
 
@@ -189,5 +204,6 @@ permalink: "/reviews/"
     </section>
 
     {% include 'sections/cta.html' %}
+    {% include 'sections/cta-dark.html' %}
 
 {% endblock %}
