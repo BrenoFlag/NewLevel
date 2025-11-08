@@ -22,8 +22,7 @@ permalink: "/contact/"
     <div class="cs-container">
         <span class="cs-int-title">Contact Us</span>
         <p class="cs-text">
-            Platinum Craft Exteriors enhances your home's exterior with quality roofing and stunning finishes.
-        </p>
+            </p>
         <div class="cs-breadcrumbs">
             <a href="/" class="cs-link">Home</a>
             <a href="/contact/" class="cs-link cs-active">Contact</a>
@@ -109,15 +108,17 @@ permalink: "/contact/"
                 <!--Phone-->
                 <span class="cs-header">Phone</span>
                 <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-                <!--Address intentionally hidden for launch
+
                 <span class="cs-header">Address</span>
                 <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.lineOne }}, <br>
-                    {{ client.address.lineTwo }}, <br>
+                    <!--
+                     {{ client.address.lineOne }}, <br>
+                     {{ client.address.lineTwo }}, <br>
+                     -->
                     {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
+
+                    <!-- {{ client.address.zip }} -->
                 </a>
-                -->
                 <!-- Background Image-->
                 <picture class="cs-bg-picture cs-bg-picture--light">
                     <!--Mobile Image-->
