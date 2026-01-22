@@ -212,4 +212,80 @@ permalink: "/contact/"
         </div>
     </section>
 
+    <!-- ============================================ -->
+    <!--             Newsletter Signup                -->
+    <!-- ============================================ -->
+
+    <section id="cs-newsletter">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Join Our Subscribers</h2>
+                <p class="cs-text">
+                    Subscribe to receive exclusive PR tips, industry insights, and more.
+                </p>
+            </div>
+            <form id="cs-newsletter-form" name="newsletter" method="post" netlify>
+                <input type="hidden" name="form-name" value="newsletter">
+                <div class="cs-consent">
+                    <input type="checkbox" id="newsletter-consent" name="marketingConsent" required>
+                    <label for="newsletter-consent">
+                        I agree to receive marketing communications from NuLevel Group. You can unsubscribe at any time.
+                    </label>
+                </div>
+                <div class="cs-form-row">
+                    <div class="cs-field">
+                        <label for="newsletter-email">Email</label>
+                        <input required type="email" id="newsletter-email" name="newsletterEmail" placeholder="Email address">
+                    </div>
+                    <button class="cs-button-solid cs-submit" type="submit">Subscribe</button>
+                </div>
+                <p class="cs-form-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsletterForm = document.getElementById("cs-newsletter-form");
+
+            if (!newsletterForm) {
+                return;
+            }
+
+            const status = newsletterForm.querySelector(".cs-form-status");
+            const emailInput = newsletterForm.querySelector("#newsletter-email");
+            const consentInput = newsletterForm.querySelector("#newsletter-consent");
+
+            newsletterForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                status.textContent = "";
+                status.classList.remove("is-success", "is-error");
+
+                if (!newsletterForm.checkValidity()) {
+                    newsletterForm.reportValidity();
+                    return;
+                }
+
+                try {
+                    const response = await fetch("/", {
+                        method: "POST",
+                        body: new FormData(newsletterForm),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+
+                    status.textContent = "Thanks for subscribing!";
+                    status.classList.add("is-success");
+                    emailInput.value = "";
+                    consentInput.checked = false;
+                } catch (error) {
+                    status.textContent = "Something went wrong. Please try again.";
+                    status.classList.add("is-error");
+                }
+            });
+        });
+    </script>
+
 {% endblock %}
