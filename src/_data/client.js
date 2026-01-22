@@ -15,7 +15,8 @@ module.exports = {
     socials: {
         facebook: "https://www.facebook.com/share/1CaK6mLK92/?mibextid=wwXIfr",
         instagram: "https://www.instagram.com/nulevelgroup?igsh=MXZxNThqa25oYWR2NQ==",
-        linkedin: "https://www.linkedin.com/company/nulevelgroup/"
+        linkedin: "https://www.linkedin.com/company/nulevelgroup/",
+        pinterest: "https://pin.it/7vnqxMkBW"
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     domain: "https://www.example.com",
