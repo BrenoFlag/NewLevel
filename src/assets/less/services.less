@@ -501,22 +501,17 @@
       display: flex;
       flex-direction: column;
       gap: (20/16rem);
+      width: 100%;
     }
 
     .cs-item {
       list-style: none;
-      min-height: (290/16rem);
-      /* 16px - 24px left & right */
-      padding: (16/16rem) clamp(1rem, 1.8vw, 1.5rem);
-      border-bottom: 1px solid var(--headerColor);
+      border: 1px solid var(--headerColor);
       /* prevents padding and border from affecting height and width */
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      &:last-of-type {
-        border: none;
-      }
     }
 
     .cs-h3 {
@@ -524,9 +519,9 @@
       font-weight: 500;
       line-height: 1.2em;
       text-align: left;
-      margin: 0 0 (12/16rem) 0;
-      color: var(--primary);
+      margin: 0;
       display: block;
+      width: 100%;
     }
 
     .cs-item-text {
@@ -546,6 +541,43 @@
       color: var(--primary);
       display: block;
     }
+
+    .cs-accordion-toggle {
+      font: inherit;
+      color: var(--primary);
+      background: transparent;
+      border: none;
+      padding: (16/16rem) clamp(1rem, 1.8vw, 1.5rem);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: (12/16rem);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .cs-accordion-icon {
+      width: (12/16rem);
+      height: (12/16rem);
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .cs-accordion-body {
+      padding: 0 clamp(1rem, 1.8vw, 1.5rem) (16/16rem);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .cs-item.is-open {
+      .cs-accordion-icon {
+        transform: rotate(-135deg);
+      }
+    }
   }
 }
 
@@ -555,31 +587,14 @@
     .cs-container {
       max-width: (1280/16rem);
     }
-
-    .cs-card-group {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
-    .cs-item {
-      width: 48%;
-      &:nth-of-type(3) {
-        border-bottom: none;
-      }
-    }
   }
 }
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #steps-585 {
-    .cs-card-group {
-      flex-wrap: nowrap;
-    }
-
-    .cs-item {
-      border-bottom: none;
-      border-right: 1px solid var(--headerColor);
+    .cs-container {
+      max-width: (1280/16rem);
     }
   }
 }
@@ -602,6 +617,10 @@
       .cs-item-text {
         color: var(--bodyTextColorWhite);
         opacity: 0.8;
+      }
+
+      .cs-accordion-toggle {
+        color: var(--primaryLight);
       }
 
       .cs-h3,
