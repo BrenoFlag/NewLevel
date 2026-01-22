@@ -106,47 +106,77 @@ permalink: "/contact/"
                     </p>
                 </div>
                 <form id="cs-form-265" name="Contact Form" method="post" netlify>
-                    <label>
-                        Name
-                        <input required type="text" id="name-265" name="name" placeholder="Name">
-                    </label>
+                    <input type="hidden" name="form-name" value="Contact Form">
+                    <div class="cs-form-row">
+                        <label>
+                            First Name
+                            <input required type="text" id="first-name-265" name="firstName" placeholder="First name">
+                        </label>
+                        <label>
+                            Last Name
+                            <input required type="text" id="last-name-265" name="lastName" placeholder="Last name">
+                        </label>
+                    </div>
                     <label>
                         Email
-                        <input required type="text" id="email-265" name="email" placeholder="Email">
+                        <input required type="email" id="email-265" name="email" placeholder="Email address">
                     </label>
                     <label>
-                        Phone
-                        <input required type="text" id="phone-265" name="phone" placeholder="Phone">
+                        Website
+                        <input type="url" id="website-265" name="website" placeholder="https://">
                     </label>
                     <label>
-                        How Did You Find Us
-                        <input type="text" id="find-265" name="find-us" placeholder="How did you find us?">
+                        Instagram
+                        <input type="text" id="instagram-265" name="instagram" placeholder="@handle or https://instagram.com">
+                    </label>
+                    <fieldset class="cs-form-fieldset">
+                        <legend class="cs-form-legend">Services you are interested in:</legend>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Public Relations">
+                            Public Relations
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Digital Marketing">
+                            Digital Marketing
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Media Relations">
+                            Media Relations
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Social Media Marketing">
+                            Social Media Marketing
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Event Publicity">
+                            Event Publicity
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="Event Management">
+                            Event Management
+                        </label>
+                        <label class="cs-checkbox">
+                            <input type="checkbox" name="servicesInterested" value="On-Site Coordinator">
+                            On-Site Coordinator
+                        </label>
+                    </fieldset>
+                    <label class="cs-label-message">
+                        Tell us a little bit about you and your brand
+                        <textarea required name="brandAbout" id="brand-about-265" placeholder="Share a few details about your brand."></textarea>
+                    </label>
+                    <label class="cs-label-message">
+                        How did you hear about us?
+                        <textarea name="hearAboutUs" id="hear-about-265" placeholder="Let us know how you found us."></textarea>
                     </label>
                     <label class="cs-label-message">
                         Message
-                        <textarea required name="Message" id="message-265" placeholder="Write message..."></textarea>
+                        <textarea name="message" id="message-265" placeholder="Write message..."></textarea>
                     </label>
-                    <button class="cs-button-solid cs-submit" type="submit">Submit Message</button>
+                    <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+                    <p class="cs-form-status" role="status" aria-live="polite">We’ll be in touch within 1-2 business days.</p>
                 </form>
             </div>
             <div class="cs-right-section">
-                <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
-                <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{ client.address.mapLink }}">
-                    <!--
-                     {{ client.address.lineOne }}, <br>
-                     {{ client.address.lineTwo }}, <br>
-                     -->
-                    {{ client.address.city }}, {{ client.address.state }}
-
-                    <!-- {{ client.address.zip }} -->
-                </a>
                 <!-- Background Image-->
                 <picture class="cs-bg-picture cs-bg-picture--light">
                     <!--Mobile Image-->
@@ -181,5 +211,81 @@ permalink: "/contact/"
             </div>
         </div>
     </section>
+
+    <!-- ============================================ -->
+    <!--             Newsletter Signup                -->
+    <!-- ============================================ -->
+
+    <section id="cs-newsletter">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Join Our Subscribers</h2>
+                <p class="cs-text">
+                    Subscribe to receive exclusive PR tips, industry insights, and more.
+                </p>
+            </div>
+            <form id="cs-newsletter-form" name="newsletter" method="post" netlify>
+                <input type="hidden" name="form-name" value="newsletter">
+                <div class="cs-consent">
+                    <input type="checkbox" id="newsletter-consent" name="marketingConsent" required>
+                    <label for="newsletter-consent">
+                        I agree to receive marketing communications from NuLevel Group. You can unsubscribe at any time.
+                    </label>
+                </div>
+                <div class="cs-form-row">
+                    <div class="cs-field">
+                        <label for="newsletter-email">Email</label>
+                        <input required type="email" id="newsletter-email" name="newsletterEmail" placeholder="Email address">
+                    </div>
+                    <button class="cs-button-solid cs-submit" type="submit">Subscribe</button>
+                </div>
+                <p class="cs-form-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const newsletterForm = document.getElementById("cs-newsletter-form");
+
+            if (!newsletterForm) {
+                return;
+            }
+
+            const status = newsletterForm.querySelector(".cs-form-status");
+            const emailInput = newsletterForm.querySelector("#newsletter-email");
+            const consentInput = newsletterForm.querySelector("#newsletter-consent");
+
+            newsletterForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                status.textContent = "";
+                status.classList.remove("is-success", "is-error");
+
+                if (!newsletterForm.checkValidity()) {
+                    newsletterForm.reportValidity();
+                    return;
+                }
+
+                try {
+                    const response = await fetch("/", {
+                        method: "POST",
+                        body: new FormData(newsletterForm),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+
+                    status.textContent = "Thanks for subscribing!";
+                    status.classList.add("is-success");
+                    emailInput.value = "";
+                    consentInput.checked = false;
+                } catch (error) {
+                    status.textContent = "Something went wrong. Please try again.";
+                    status.classList.add("is-error");
+                }
+            });
+        });
+    </script>
 
 {% endblock %}
