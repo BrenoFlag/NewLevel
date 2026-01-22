@@ -197,6 +197,9 @@
         }
 
         #cs-form-265 {
+            display: flex;
+            flex-direction: column;
+
             label {
                 font-size: (16/16rem);
                 line-height: 1.5em;
@@ -210,12 +213,23 @@
                 flex-direction: column;
             }
 
+            .cs-form-row {
+                display: flex;
+                flex-direction: column;
+                gap: clamp(0.75rem, 1.3em, 1.25rem);
+                margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
+
+                label {
+                    margin-bottom: 0;
+                }
+            }
+
             .cs-label-message {
                 /* 32px - 48px */
                 margin-bottom: clamp(2rem, 6.3vw, 3rem);
             }
 
-            input,
+            input:not([type="checkbox"]),
             textarea {
                 font-size: (16/16rem);
                 width: 100%;
@@ -231,6 +245,47 @@
                 &:hover {
                     border: 1px solid var(--primary);
                 }
+            }
+
+            .cs-form-fieldset {
+                border: none;
+                padding: 0;
+                margin: 0 0 clamp(0.75rem, 1.3em, 1.25rem);
+                display: flex;
+                flex-direction: column;
+                gap: (12/16rem);
+            }
+
+            .cs-form-legend {
+                font-size: (16/16rem);
+                line-height: 1.5em;
+                font-weight: 700;
+                margin-bottom: (8/16rem);
+                color: var(--headerColor);
+            }
+
+            .cs-checkbox {
+                font-size: (16/16rem);
+                line-height: 1.5em;
+                font-weight: 400;
+                display: flex;
+                align-items: center;
+                gap: (12/16rem);
+                margin: 0;
+            }
+
+            .cs-checkbox input {
+                margin: 0;
+                width: (18/16rem);
+                height: (18/16rem);
+                accent-color: var(--primary);
+            }
+
+            .cs-form-status {
+                font-size: (14/16rem);
+                line-height: 1.5em;
+                color: var(--bodyTextColor);
+                margin: (12/16rem) 0 0 0;
             }
 
             textarea {
@@ -381,17 +436,13 @@
         }
 
         #cs-form-265 {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-
-            label {
-                width: 48%;
+            .cs-form-row {
+                flex-direction: row;
+                gap: (20/16rem);
             }
 
-            .cs-label-message {
-                width: 100%;
+            .cs-form-row label {
+                flex: 1;
             }
         }
     }
@@ -412,8 +463,8 @@
         }
 
         #cs-form-265 {
-            label {
-                width: 100%;
+            .cs-form-row {
+                gap: (24/16rem);
             }
         }
 
@@ -443,14 +494,8 @@
 @media only screen and (min-width: 81.25rem) {
     #cs-contact-265 {
         #cs-form-265 {
-            column-gap: (0/16rem);
-            label {
-                width: 48%;
-                max-width: (305/16rem);
-            }
-
-            .cs-label-message {
-                max-width: 100%;
+            .cs-form-row {
+                gap: (24/16rem);
             }
         }
 
@@ -484,7 +529,7 @@
 
             #cs-form-265 {
                 label,
-                input,
+                input:not([type="checkbox"]),
                 textarea {
                     background-color: transparent;
                     color: var(--bodyTextColorWhite);
@@ -493,6 +538,14 @@
                         /* lighten up the color of the text by 40%*/
                         filter: brightness(1.4);
                     }
+                }
+
+                .cs-form-legend {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-form-status {
+                    color: var(--bodyTextColorWhite);
                 }
             }
 
