@@ -75,6 +75,7 @@
         --buttonColor: #C9C9C9;
         --buttonTextColor: #1A1A1A;
         -buttonColorHover: #E3E3E3;
+        --newsletterBackground: #f7f3ef;
 
         --headerColor: #000;
         --bodyTextColor: #000;
@@ -1344,6 +1345,132 @@
 
         #cta-51-dark {
             display: block;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---    Newsletter Pre-Footer   -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cs-footer-newsletter {
+        padding: clamp(2.5rem, 6vw, 5.625rem) clamp(1rem, 5vw, 4rem);
+        background-color: var(--newsletterBackground);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1100/16rem);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .cs-content {
+            text-align: left;
+        }
+
+        .cs-subtitle {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            line-height: 1.3em;
+            color: var(--headerColor);
+            margin: 0;
+        }
+
+        .cs-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+        }
+
+        .cs-form-row {
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+            width: 100%;
+        }
+
+        .cs-field {
+            font-size: (16/16rem);
+            line-height: 1.4em;
+            font-weight: 600;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+        }
+
+        .cs-field input {
+            width: 100%;
+            height: (58/16rem);
+            padding: 0 (20/16rem);
+            border: 1px solid #d6d0c8;
+            border-radius: (6/16rem);
+            background-color: #fff;
+            font-size: (16/16rem);
+            transition: border 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--headerColor);
+            }
+        }
+
+        .cs-submit {
+            width: 100%;
+            border-radius: (6/16rem);
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 600;
+            padding: (16/16rem);
+        }
+
+        .cs-form-status {
+            font-size: (14/16rem);
+            line-height: 1.4em;
+            color: var(--headerColor);
+            min-height: (20/16rem);
+            margin: 0;
+        }
+
+        .cs-form-status.is-success {
+            color: var(--primary);
+        }
+
+        .cs-form-status.is-error {
+            color: #b00020;
+        }
+    }
+}
+
+/* Desktop - 900px */
+@media only screen and (min-width: 56.25rem) {
+    #cs-footer-newsletter {
+        .cs-container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: clamp(2rem, 6vw, 5rem);
+        }
+
+        .cs-content {
+            width: 55%;
+            max-width: none;
+        }
+
+        .cs-form {
+            width: 45%;
+        }
+
+        .cs-form-row--split {
+            flex-direction: row;
+
+            .cs-field {
+                width: 100%;
+            }
         }
     }
 }
