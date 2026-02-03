@@ -212,4 +212,30 @@ permalink: "/contact/"
         </div>
     </section>
 
+
+<!-- ============================================ -->
+<!--             Newsletter + Footer              -->
+<!-- ============================================ -->
+
+<section id="cs-footer-newsletter">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-topper">Subscribe to our newsletter.</p>
+            <p class="cs-subtitle">Get the latest updates from our team!</p>
+        </div>
+        <form id="cs-footer-newsletter-form" class="cs-form" name="newsletter" method="post" netlify data-newsletter-form>
+            <input type="hidden" name="form-name" value="newsletter">
+            <div class="cs-form-row">
+                <label class="cs-field cs-field-email">
+                    Email
+                    <input required type="email" id="footer-newsletter-email" name="newsletterEmail" placeholder="Email address">
+                </label>
+            </div>
+            <button class="cs-button-solid cs-submit" style="border: 0px" type="submit">Sign Up</button>
+            <p class="cs-form-status" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
+
+
 {% endblock %}
