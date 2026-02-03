@@ -1,87 +1,305 @@
+
 <!-- ============================================ -->
 <!--                   Footer                     -->
 <!-- ============================================ -->
 
-<footer id="cs-footer-275">
-    <div class="cs-container">
-        <!-- Logo Group -->
-        <div class="cs-logo-group">
-            <a aria-label="go back to home" class="cs-logo" href="/">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/nuLevelGroupWhite.svg" alt="logo" width="80" height="11">
-            </a>
-            <p class="cs-text">
-                Boutique wedding PR agency elevating creative brands to new heights of global recognition. From weddings to architecture, we turn artistry into opportunity through faith, focus, and determination.
-            </p>
-            <div class="cs-social">
-                <!--
-                <a class="cs-social-link" aria-label="visit google profile" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="google" width="11" height="11">
-                </a>
-                -->
+<style>
+    <!-- /* footer.css */
 
-                <a class="cs-social-link" aria-label="visit facebook profile" href="{{ client.socials.facebook }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/facebook.svg" alt="facebook" width="6" height="11">
-                </a>
-                <a class="cs-social-link" aria-label="visit Linkedin profile" href="{{ client.socials.linkedin }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/linkedin.svg" alt="linkedin" width="11" height="11">
-                </a>
-                <a class="cs-social-link" aria-label="visit instagram profile" href="{{ client.socials.instagram }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/instagram.svg" alt="instagram" width="11" height="11">
-                </a>
-                <a class="cs-social-link" aria-label="visit pinterest profile" href="{{ client.socials.pinterest }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/pinterest.svg" alt="pinterest" width="11" height="11">
-                </a>
+    /* ========================================
+       Variables
+       ======================================== */
+    :root {
+        --footer-bg: var(--darkBackground);
+        --footer-accent: var(--secondary);
+        --footer-accent-hover: var(--secondary);
+        --footer-text-muted: var(--secondary);
+        --footer-max-width: 1100px;
+        --footer-padding-y: 80px;
+        --footer-padding-x: 40px;
+        --footer-icon-size: 48px;
+        --footer-icon-gap: 12px;
+    }
+
+    /* ========================================
+       Base Footer Styles
+       ======================================== */
+    .site-footer {
+        background-color: var(--darkBackground);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .site-footer *,
+    .site-footer *::before,
+    .site-footer *::after {
+        box-sizing: border-box;
+    }
+
+    .footer-container {
+        max-width: var(--footer-max-width);
+        margin: 0 auto;
+        padding: var(--footer-padding-y) var(--footer-padding-x);
+    }
+
+    /* ========================================
+       Two-Column Layout (Desktop)
+       ======================================== */
+    .footer-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    /* ========================================
+       Left Column: Navigation
+       ======================================== */
+    .footer-nav {
+        flex: 0 0 auto;
+    }
+
+    .footer-nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-nav-list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-nav-list a {
+        color: var(--secondary);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        font-size: 18px;
+        font-family: Georgia, 'Times New Roman', serif;
+        transition: color 0.2s ease;
+        display: inline-block;
+        padding: 4px 0;
+    }
+
+    .footer-nav-list a:hover,
+    .footer-nav-list a:focus {
+        color: var(--secondary);
+        outline: none;
+    }
+
+    .footer-nav-list a:focus-visible {
+        outline: 2px solid var(--secondary);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       Right Column: Social
+       ======================================== */
+    .footer-social {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social-heading {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 22px;
+        color: var(--secondary);
+        margin: 0 0 24px 0;
+        letter-spacing: 0.5px;
+    }
+
+    /* ========================================
+       Social Icons Row
+       ======================================== */
+    .footer-social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--footer-icon-gap);
+        margin-bottom: 32px;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--footer-icon-size);
+        height: var(--footer-icon-size);
+        min-width: 44px;
+        min-height: 44px;
+        border: 1.5px solid var(--secondary);
+        border-radius: 50%;
+        color: var(--secondary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .social-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .social-icon:hover,
+    .social-icon:focus {
+        background-color: var(--secondary);
+        color: var(--darkBackground);
+        outline: none;
+    }
+
+    .social-icon:focus-visible {
+        outline: 2px solid var(--secondary);
+        outline-offset: 3px;
+    }
+
+    /* ========================================
+       Footer Text
+       ======================================== */
+    .footer-copyright,
+    .footer-location {
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--secondary);
+        font-size: 15px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .footer-copyright {
+        margin-bottom: 6px;
+    }
+
+    /* ========================================
+       Responsive: Tablet & Mobile
+       ======================================== */
+    @media (max-width: 768px) {
+        :root {
+            --footer-padding-y: 60px;
+            --footer-padding-x: 24px;
+        }
+
+        .footer-columns {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .footer-nav {
+            order: 1;
+        }
+
+        .footer-social {
+            order: 2;
+        }
+
+        .footer-nav-list {
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-social-heading {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        :root {
+            --footer-padding-y: 48px;
+            --footer-padding-x: 16px;
+            --footer-icon-size: 44px;
+            --footer-icon-gap: 10px;
+        }
+
+        .footer-nav-list a {
+            font-size: 16px;
+        }
+
+        .footer-social-heading {
+            font-size: 18px;
+        }
+
+        .footer-copyright,
+        .footer-location {
+            font-size: 14px;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+</style>
+<footer class="site-footer" id="cs-footer-275">
+    <div class="footer-container">
+        <div class="footer-columns">
+            <!-- Left Column: Navigation -->
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul class="footer-nav-list">
+                    <li style="color: #fff"><a class="cs-nav-link href="/services/"><b>Services</b></a></li>
+                    <li style="color: #fff">Public Relations</li>
+                    <li style="color: #fff">Media Relations</li>
+                    <li style="color: #fff">Digital Marketing</li>
+                    <li style="color: #fff">Blog</li>
+                </ul>
+            </nav>
+
+            <!-- Right Column: Social -->
+            <div class="footer-social">
+                <h2 class="footer-social-heading" style="color: #fff">let's get social</h2>
+                <div class="footer-social-icons">
+                    <a href="{{ client.socials.instagram}}" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="{{ client.socials.facebook }}" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@nulevelgroup.org" class="social-icon" aria-label="Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </a>
+                    <a href="{{client.socials.pinterest}}" class="social-icon" aria-label="Pinterest">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.5 15c-.6 2.5-1 4-1 4"/>
+                            <path d="M15 9.5a3.5 3.5 0 0 0-5.5 2.9c0 1 .3 1.8.8 2.4"/>
+                            <path d="M8.5 12.5c-.2-.7-.3-1.5 0-2.5.5-2 2.5-3.5 5-3 2 .4 3.5 2 3.5 4.5 0 2-1 4-3 4-.8 0-1.5-.5-1.5-1.5 0-.5.2-1 .5-1.5"/>
+                        </svg>
+                    </a>
+                    <a href="{{ client.socials.linkedin }}" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-copyright">
+                    <span>
+                        © 2026 NuLevel Group. All rights reserved.
+                        <br>Designed & Developed by
+                        <a class="cs-nav-link" href="https://elevatewebsitesdesign.com/" target="_blank">
+                            Elevate Websites Design
+                        </a>
+                    </span>
+                </div>
+                <p class="footer-location">Atlanta, GA</p>
             </div>
-        </div>
-        <!-- Links -->
-        <ul class="cs-nav">
-            <li class="cs-nav-li">
-                <a class="cs-header" href="/services">Services</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/services">Public Relations</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/services/">Media Relations</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/services/">Digital Marketing</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/services/">Blog</a>
-            </li>
-        </ul>
-        <!-- Contact Info -->
-        <ul class="cs-contact">
-            <li class="cs-nav-li">
-                <span class="cs-header">Contact</span>
-            </li>
-            <li class="cs-contact-li">
-                <a class="cs-contact-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
-                   <!--
-                    {{ client.address.lineOne }}, <br>
-                    {{ client.address.lineTwo }}, <br>
-                    -->
-                    {{ client.address.city }}, {{ client.address.state }}
-
-                   <!-- {{ client.address.zip }} -->
-                </a>
-            </li>
-            <li class="cs-contact-li">
-                <a class="cs-contact-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-            </li>
-            <li class="cs-contact-li">
-                <a class="cs-contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
-            </li>
-        </ul>
-        <div class="cs-container">
-            <span class="cs-header" style="padding-top: 32px">
-                © 2026 NuLevel Group. All rights reserved.
-                <br>Designed & Developed by
-                <a class="cs-nav-link" href="https://elevatewebsitesdesign.com/" target="_blank">
-                    Elevate Websites Design
-                </a>
-            </span>
         </div>
     </div>
 </footer>

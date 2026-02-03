@@ -1553,35 +1553,383 @@
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #cs-footer-275 {
-        .cs-container {
-            /* pushes all flex children to the top */
-            align-items: flex-start;
-            justify-content: flex-end;
+        /* footer.less */
+        /* Uses your CSS variables from root.less (screenshot): background from --darkBackground,
+           accent color from --accent, and dark text from --primary/--darkBackground. */
+
+        .site-footer {
+            background: var(--darkBackground);
+            padding: clamp(3.25rem, 7vw, 5.5rem) 1rem;
+
+            .footer-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                align-items: start;
+
+                // This is what gives the “left column sitting left-of-center” vibe
+                column-gap: clamp(2rem, 10vw, 7rem);
+            }
+
+            a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+            a:focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 4px;
+            }
         }
 
-        .cs-logo-group {
-            /* pushes everything to the right of it as far as possible in a flexbox */
-            margin-right: auto;
-            width: auto;
-            max-width: (305/16rem);
+        /* Left column */
+        .footer-nav {
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                display: flex;
+                flex-direction: column;
+                gap: 1.15rem;
+            }
+
+            a {
+                display: inline-block;
+                font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+                letter-spacing: 0.01em;
+
+                &:hover {
+                    opacity: 0.85;
+                }
+            }
         }
 
-        .cs-text {
-            width: 100%;
+        /* Right column */
+        .footer-social {
+            text-align: center;
+
+            h2 {
+                margin: 0 0 1.25rem 0;
+                font-weight: 400;
+                font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+                color: var(--accent);
+            }
+
+            .social-row {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.85rem;
+
+                margin-bottom: 1.35rem;
+            }
+
+            .social-btn {
+                width: 2.35rem;
+                height: 2.35rem;
+                border-radius: 999px;
+
+                background: var(--accent);
+                display: grid;
+                place-items: center;
+
+                transition: transform 160ms ease, opacity 160ms ease;
+
+                svg {
+                    width: 1.05rem;
+                    height: 1.05rem;
+                    fill: var(--darkBackground); // black icon on gold circle (like screenshot)
+                    display: block;
+                }
+
+                &:hover {
+                    transform: translateY(-1px);
+                    opacity: 0.92;
+                }
+            }
+
+            .footer-meta {
+                margin: 0.6rem 0 0 0;
+                color: var(--accent);
+                font-size: clamp(1rem, 1.35vw, 1.15rem);
+                letter-spacing: 0.01em;
+            }
         }
 
-        .cs-social {
-            flex-direction: row;
-            position: relative;
-            top: auto;
-            right: auto;
-        }
+        /* Mobile: stack + keep right section centered */
+        @media (max-width: 820px) {
+            .site-footer {
+                .footer-inner {
+                    grid-template-columns: 1fr;
+                    row-gap: 2.25rem;
+                    column-gap: 0;
+                }
 
-        .cs-contact {
-            width: auto;
+                .footer-nav {
+                    ul {
+                        align-items: center; // looks cleaner on mobile
+                    }
+                }
+            }
         }
     }
 }
+
+
+
+/* footer.css */
+
+/* ========================================
+   Variables
+   ======================================== */
+#cs-footer-275 {
+    :root {
+        --footer-bg: #0a0a0a;
+        --footer-accent: #d4a855;
+        --footer-accent-hover: #e6bf6a;
+        --footer-text-muted: #b8a882;
+        --footer-max-width: 1100px;
+        --footer-padding-y: 80px;
+        --footer-padding-x: 40px;
+        --footer-icon-size: 48px;
+        --footer-icon-gap: 12px;
+    }
+
+    /* ========================================
+       Base Footer Styles
+       ======================================== */
+
+    .site-footer {
+        background-color: var(--footer-bg);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .site-footer *,
+    .site-footer *::before,
+    .site-footer *::after {
+        box-sizing: border-box;
+    }
+
+    .footer-container {
+        max-width: var(--footer-max-width);
+        margin: 0 auto;
+        padding: var(--footer-padding-y) var(--footer-padding-x);
+    }
+
+    /* ========================================
+       Two-Column Layout (Desktop)
+       ======================================== */
+
+    .footer-columns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    /* ========================================
+       Left Column: Navigation
+       ======================================== */
+
+    .footer-nav {
+        flex: 0 0 auto;
+    }
+
+    .footer-nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-nav-list li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-nav-list a {
+        color: var(--footer-accent);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        font-size: 18px;
+        font-family: Georgia, 'Times New Roman', serif;
+        transition: color 0.2s ease;
+        display: inline-block;
+        padding: 4px 0;
+    }
+
+    .footer-nav-list a:hover,
+    .footer-nav-list a:focus {
+        color: var(--footer-accent-hover);
+        outline: none;
+    }
+
+    .footer-nav-list a:focus-visible {
+        outline: 2px solid var(--footer-accent);
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       Right Column: Social
+       ======================================== */
+
+    .footer-social {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-social-heading {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 22px;
+        color: var(--footer-accent);
+        margin: 0 0 24px 0;
+        letter-spacing: 0.5px;
+    }
+
+    /* ========================================
+       Social Icons Row
+       ======================================== */
+
+    .footer-social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--footer-icon-gap);
+        margin-bottom: 32px;
+    }
+
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--footer-icon-size);
+        height: var(--footer-icon-size);
+        min-width: 44px;
+        min-height: 44px;
+        border: 1.5px solid var(--footer-accent);
+        border-radius: 50%;
+        color: var(--footer-accent);
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .social-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .social-icon:hover,
+    .social-icon:focus {
+        background-color: var(--footer-accent);
+        color: var(--footer-bg);
+        outline: none;
+    }
+
+    .social-icon:focus-visible {
+        outline: 2px solid var(--footer-accent-hover);
+        outline-offset: 3px;
+    }
+
+    /* ========================================
+       Footer Text
+       ======================================== */
+
+    .footer-copyright,
+    .footer-location {
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--footer-text-muted);
+        font-size: 15px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .footer-copyright {
+        margin-bottom: 6px;
+    }
+
+    /* ========================================
+       Responsive: Tablet & Mobile
+       ======================================== */
+    @media (max-width: 768px) {
+        :root {
+            --footer-padding-y: 60px;
+            --footer-padding-x: 24px;
+        }
+
+        .footer-columns {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .footer-nav {
+            order: 1;
+        }
+
+        .footer-social {
+            order: 2;
+        }
+
+        .footer-nav-list {
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-social-heading {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        :root {
+            --footer-padding-y: 48px;
+            --footer-padding-x: 16px;
+            --footer-icon-size: 44px;
+            --footer-icon-gap: 10px;
+        }
+
+        .footer-nav-list a {
+            font-size: 16px;
+        }
+
+        .footer-social-heading {
+            font-size: 18px;
+        }
+
+        .footer-copyright,
+        .footer-location {
+            font-size: 14px;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
 
 @font-sans: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 @font-headline: "Bodoni Moda", Georgia, "Times New Roman", Times, serif;
@@ -1620,3 +1968,9 @@ strong, b {
   font-weight: 400;
   letter-spacing: 0.01em;
 }
+
+
+
+
+
+
